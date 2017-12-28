@@ -1,11 +1,11 @@
 #
-# MAINTAINER        Carson,C.J.Zeong <zcy@nicescale.com>
-# DOCKER-VERSION    1.6.2
+# MAINTAINER        Tom.Shen <t.shenhao@gmail.com>
+# DOCKER-VERSION    17.12
 #
 # Dockerizing Mariadb: Dockerfile for building Mariadb images
 #
-FROM csphere/centos:7.1
-MAINTAINER Carson,C.J.Zeong <zcy@nicescale.com>
+FROM tom/centos:7.4
+MAINTAINER Tom.Shen <t.shenhao@gmail.com>
 
 ENV DATA_DIR /var/lib/mysql
 
@@ -17,6 +17,7 @@ ADD mysqld_charset.cnf /etc/my.cnf.d/
 
 COPY scripts /scripts
 RUN chmod +x /scripts/start
+RUN chmod +x /scripts/firstrun_maria
 
 EXPOSE 3306
 
